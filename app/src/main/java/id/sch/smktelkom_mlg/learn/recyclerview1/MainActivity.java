@@ -43,7 +43,7 @@ ArrayList<Hotel> mList = new ArrayList<>();
             arFoto[i] = a.getDrawable(i);
             BitmapDrawable rbd= RoundedBitmapDrawableFactory.create(getResources(), rbd.getBitmap());
             rbd.setCircular(true);
-            arFoto(i)= rbd;
+
 
         }
 
