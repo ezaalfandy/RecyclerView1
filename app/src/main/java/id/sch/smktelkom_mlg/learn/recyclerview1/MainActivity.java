@@ -2,9 +2,12 @@ package id.sch.smktelkom_mlg.learn.recyclerview1;
 
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -20,7 +23,7 @@ ArrayList<Hotel> mList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerVIew);
-        LinearLayoutManager layoutManager= new LinearLayoutManager (this);
+        GridLayoutManager layoutManager= new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
         mAdapter = new HotelAdapter(mList);
         recyclerView.setAdapter(mAdapter);
@@ -38,6 +41,9 @@ ArrayList<Hotel> mList = new ArrayList<>();
         Drawable [] arFoto  = new Drawable[a.length()];
         for (int i = 0; i < arFoto.length; i++){
             arFoto[i] = a.getDrawable(i);
+            BitmapDrawable rbd= RoundedBitmapDrawableFactory.create(getResources(), rbd.getBitmap());
+            rbd.setCircular(true);
+            arFoto(i)= rbd;
 
         }
 
